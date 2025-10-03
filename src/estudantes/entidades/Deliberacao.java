@@ -23,8 +23,8 @@ public class Deliberacao extends DocumentoAdministrativo {
         this.texto = texto;
     }
 
-    public boolean equalsDeliberacao(Deliberacao delib) {
-        if (this.getTexto().equals(delib.getTexto()) && this.equalsDocumentoAdministrativo(delib)) {
+    public boolean equalsDeliberacao(Deliberacao deliberacao) {
+        if (this.getTexto().equals(deliberacao.getTexto()) && this.equalsDocumentoAdministrativo(deliberacao)) {
             return true;
         }
         return false;

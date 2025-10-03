@@ -45,8 +45,8 @@ public abstract class Documento {
         this.paginas = paginas;
     }
 
-    public boolean equalsDocumento(Documento doc) {
-        if (this.criador.equals(doc.getCriador()) && this.codigoCurso == doc.getCodigoCurso() && this.paginas == doc.getPaginas()) {
+    public boolean equalsDocumento(Documento documento) {
+        if (this.criador.equals(documento.getCriador()) && this.codigoCurso == documento.getCodigoCurso() && this.paginas == documento.getPaginas()) {
             return true;
         }
         return false;

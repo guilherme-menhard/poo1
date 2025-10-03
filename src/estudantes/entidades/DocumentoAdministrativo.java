@@ -12,8 +12,8 @@ public class DocumentoAdministrativo extends Documento {
         super(criador, codigoCurso, paginas);
     }
     
-    public boolean equalsDocumentoAdministrativo(DocumentoAdministrativo doc) {
-        if (this.getCriador().equals(doc.getCriador()) && this.getCodigoCurso() == doc.getCodigoCurso() && this.getPaginas() == doc.getPaginas()) {
+    public boolean equalsDocumentoAdministrativo(DocumentoAdministrativo documentoAdministrativo) {
+        if (this.getCriador().equals(documentoAdministrativo.getCriador()) && this.getCodigoCurso() == documentoAdministrativo.getCodigoCurso() && this.getPaginas() == documentoAdministrativo.getPaginas()) {
             return true;
         }
         return false;

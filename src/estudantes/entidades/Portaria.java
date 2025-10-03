@@ -23,8 +23,8 @@ public class Portaria extends Norma {
         this.anoInicio = anoInicio;
     }
 
-    public boolean equalsPortaria(Portaria port) {
-        if (this.getAnoInicio() == port.getAnoInicio() && this.equalsNorma(port)) {
+    public boolean equalsPortaria(Portaria portaria) {
+        if (this.getAnoInicio() == portaria.getAnoInicio() && this.equalsNorma(portaria)) {
             return true;
         }
         return false;
