@@ -1,6 +1,8 @@
 //Mariana
 package estudantes.entidades;
 
+import java.util.Arrays;
+
 import professor.entidades.CodigoCurso;
 
 public class Plano extends DocumentoAcademico {
@@ -29,6 +31,28 @@ public class Plano extends DocumentoAcademico {
 
     public void setPlanejamento(String[] planejamento) {
         this.planejamento = planejamento;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Plano plano = (Plano) obj;
+        return responsavel.equals(plano.responsavel) && Arrays.equals(planejamento, plano.planejamento);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (responsavel != null ? responsavel.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(planejamento);
+        return result;
+
     }
 
 }
