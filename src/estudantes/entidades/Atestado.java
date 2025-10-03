@@ -31,4 +31,26 @@ public class Atestado extends Registro {
         this.categoria = categoria;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Atestado atestado = (Atestado) obj;
+        return descricao.equals(atestado.descricao) && categoria.equals(atestado.categoria);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (descricao != null ? descricao.hashCode() : 0);
+        result = 31 * result + (categoria != null ? categoria.hashCode() : 0);
+        return result;
+
+    }
+
 }
