@@ -30,4 +30,23 @@ public class Registro extends DocumentoAcademico {
         this.matricula = matricula;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Registro res = (Registro) obj;
+        return estudante.equals(res.estudante) && matricula == res.matricula;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Long.hashCode(matricula);
+        result = 31 * result + (estudante != null ? estudante.hashCode() : 0);
+        return result;
+    }
+
 }
