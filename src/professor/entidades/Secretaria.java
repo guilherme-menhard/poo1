@@ -11,6 +11,7 @@ import java.util.LinkedList;
  * 
  * @author Jean Cheiran
  */
+
 public class Secretaria {
     private int documentosDespachados = 0;
     private int documentosPerdidos = 0;

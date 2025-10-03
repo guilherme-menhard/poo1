@@ -45,6 +45,9 @@ public abstract class Documento {
         this.paginas = paginas;
     }
 
+/* Início do Código gerado por IA 
+ * Primeiro equals() e hashCode(), me baseei nesse modelo da IA para codar os outros.
+*/
     public boolean equalsDocumento(Documento documento) {
         if (this.criador.equals(documento.getCriador()) && this.codigoCurso == documento.getCodigoCurso() && this.paginas == documento.getPaginas()) {
             return true;
@@ -52,7 +55,6 @@ public abstract class Documento {
         return false;
     }
 
-/* Início do Código gerado por IA */
     public int hashCodeDocumento() {
         int hash = 17;
         hash = 31 * hash + (this.criador != null ? this.criador.hashCode() : 0);
