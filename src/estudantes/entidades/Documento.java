@@ -45,7 +45,7 @@ public abstract class Documento {
         this.paginas = paginas;
     }
 
-    public boolean equals(Documento doc) {
+    public boolean equalsDocumento(Documento doc) {
         if (this.criador.equals(doc.getCriador()) && this.codigoCurso == doc.getCodigoCurso() && this.paginas == doc.getPaginas()) {
             return true;
         }
@@ -53,8 +53,8 @@ public abstract class Documento {
     }
 
 /* Início do Código gerado por IA */
-    public int hashCode() {
-        int hash = 7;
+    public int hashCodeDocumento() {
+        int hash = 17;
         hash = 31 * hash + (this.criador != null ? this.criador.hashCode() : 0);
         hash = 31 * hash + (this.codigoCurso != null ? this.codigoCurso.hashCode() : 0);
         hash = 31 * hash + this.paginas;
