@@ -2,6 +2,9 @@ package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
 
+/**
+ * @author Guilherme Menhard
+ */
 
 public class DocumentoAdministrativo extends Documento {
 
@@ -17,7 +20,7 @@ public class DocumentoAdministrativo extends Documento {
     }
 
     public int hashCodeDocumentoAdministrativo() {
-        int result = 17; //Ia indicou que 17 é um bom número primo inicial.
+        int result = 17; //Copilot indicou que 17 é um bom número primo inicial.
         result = 31 * result + (getCriador() != null ? getCriador().hashCode() : 0);
         result = 31 * result + (getCodigoCurso() != null ? getCodigoCurso().hashCode() : 0);
         result = 31 * result + getPaginas();
