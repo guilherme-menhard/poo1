@@ -24,4 +24,23 @@ public class Diploma extends Certificado {
         this.habilitacao = habilitacao;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Diploma diploma = (Diploma) obj;
+        return habilitacao.equals(diploma.habilitacao);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (habilitacao != null ? habilitacao.hashCode() : 0);
+        return result;
+    }
+
 }
