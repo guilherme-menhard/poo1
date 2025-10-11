@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;

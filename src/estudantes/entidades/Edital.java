@@ -7,13 +7,13 @@ import java.util.Arrays;
  * @author Guilherme Menhard
  */
 
-
 public class Edital extends Norma {
-    
+
     private String[] responsaveis;
 
-    public Edital(String[] responsaveis, int numero, boolean valido, String texto, String criador, CodigoCurso codigoCurso, int paginas) {
-        super(numero, valido, texto, criador, codigoCurso, paginas);
+    public Edital(String texto, CodigoCurso codigoCurso, int numero, int paginas, boolean valido, String criador,
+            String[] responsaveis) {
+        super(texto, codigoCurso, numero, paginas, valido, criador);
         this.responsaveis = responsaveis;
     }
 
@@ -25,30 +25,34 @@ public class Edital extends Norma {
         this.responsaveis = responsaveis;
     }
 
-/* Início do Código gerado por IA 
- * Este foi o primeiro equals(); que usava Arrays, precisei de ajuda da IA para criar. Também pedi para ajudar no hashCode(), mas foi codado manualmente.
- * A IA também sugeriu fazer o equals() dessa forma:
- * 
- * public boolean equals(Object obj) {
- *     if (this == obj) return true;
- *     if (obj == null || getClass() != obj.getClass()) return false;
- *     Oficio oficio = (Oficio) obj;
- *     return Arrays.equals(destinatarios, oficio.destinatarios) && super.equals(oficio);
- * }
- * 
- * Porém, preferi manter o padrão que já estava sendo usado.
-*/
+    /*
+     * Início do Código gerado por IA
+     * Este foi o primeiro equals(); que usava Arrays, precisei de ajuda da IA para
+     * criar. Também pedi para ajudar no hashCode(), mas foi codado manualmente.
+     * A IA também sugeriu fazer o equals() dessa forma:
+     * 
+     * public boolean equals(Object obj) {
+     * if (this == obj) return true;
+     * if (obj == null || getClass() != obj.getClass()) return false;
+     * Oficio oficio = (Oficio) obj;
+     * return Arrays.equals(destinatarios, oficio.destinatarios) &&
+     * super.equals(oficio);
+     * }
+     * 
+     * Porém, preferi manter o padrão que já estava sendo usado.
+     */
     public boolean equalsEdital(Edital edital) {
         if (Arrays.equals(this.getResponsaveis(), edital.getResponsaveis()) && this.equalsNorma(edital)) {
             return true;
         }
         return false;
     }
-/* Fim do Código gerado por IA 
-*/
+    /*
+     * Fim do Código gerado por IA
+     */
 
     public int hashCodeEdital() {
-        int result = 17; 
+        int result = 17;
         result = 31 * result + Arrays.hashCode(getResponsaveis());
         result = 31 * result + hashCodeNorma();
         return result;

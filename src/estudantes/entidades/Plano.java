@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import java.util.Arrays;
@@ -9,8 +11,8 @@ public class Plano extends DocumentoAcademico {
     private String responsavel;
     private String[] planejamento;
 
-    public Plano(String responsavel, String[] planejamento, long autenticacao, String criador, CodigoCurso codigoCurso,
-            int paginas) {
+    public Plano(String responsavel, CodigoCurso codigoCurso, int paginas, long autenticacao, String criador,
+            String[] planejamento) {
         super(autenticacao, criador, codigoCurso, paginas);
         this.responsavel = responsavel;
         this.planejamento = planejamento;

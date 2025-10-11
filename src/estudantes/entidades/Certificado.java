@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
@@ -6,8 +8,8 @@ import professor.entidades.CodigoCurso;
 public class Certificado extends Registro {
     private String descricao;
 
-    public Certificado(String descricao, String estudante, long matricula, long autenticacao, String criador,
-            CodigoCurso codigoCurso, int paginas) {
+    public Certificado(String descricao, CodigoCurso codigoCurso, int paginas, long matricula, String estudante,
+            long autenticacao, String criador) {
         super(estudante, matricula, autenticacao, criador, codigoCurso, paginas);
         this.descricao = descricao;
     }

@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
@@ -6,10 +8,11 @@ import professor.entidades.CodigoCurso;
 public class Diploma extends Certificado {
     private String habilitacao;
 
-    public Diploma(String habilitacao, String descricao, String estudante, long matricula, long autenticacao,
+    public Diploma(String descricao, CodigoCurso codigoCurso, int paginas, long matricula, String habilitacao,
+            long autenticacao,
             String criador,
-            CodigoCurso codigoCurso, int paginas) {
-        super(descricao, estudante, matricula, autenticacao, criador, codigoCurso, paginas);
+            String estudante) {
+        super(descricao, codigoCurso, paginas, matricula, estudante, autenticacao, criador);
         this.habilitacao = habilitacao;
     }
 

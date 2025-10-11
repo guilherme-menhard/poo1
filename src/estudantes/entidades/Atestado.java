@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
@@ -7,9 +9,9 @@ public class Atestado extends Registro {
     private String descricao;
     private String categoria;
 
-    public Atestado(String descricao, String categoria, String estudante, long matricula, long autenticacao,
-            String criador, CodigoCurso codigoCurso,
-            int paginas) {
+    public Atestado(String descricao, CodigoCurso codigoCurso, int paginas, long matricula, String categoria,
+            long autenticacao, String estudante,
+            String criador) {
         super(estudante, matricula, autenticacao, criador, codigoCurso, paginas);
         this.descricao = descricao;
         this.categoria = categoria;

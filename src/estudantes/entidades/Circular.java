@@ -7,12 +7,12 @@ import java.util.Arrays;
  * @author Guilherme Menhard
  */
 
-public class Circular extends Norma {
+public class Circular extends Deliberacao {
 
     private String[] destinatarios;
 
-    public Circular(String[] destinatarios, int numero, boolean valido, String texto, String criador, CodigoCurso codigoCurso, int paginas) {
-        super(numero, valido, texto, criador, codigoCurso, paginas);
+    public Circular(String texto, CodigoCurso codigoCurso, int paginas, String criador, String[] destinatarios) {
+        super(texto, criador, codigoCurso, paginas);
         this.destinatarios = destinatarios;
     }
 
@@ -25,16 +25,16 @@ public class Circular extends Norma {
     }
 
     public boolean equalsCircular(Circular circular) {
-        if (Arrays.equals(this.getDestinatarios(), circular.getDestinatarios()) && this.equalsNorma(circular)) {
+        if (Arrays.equals(this.getDestinatarios(), circular.getDestinatarios()) && this.equalsDeliberacao(circular)) {
             return true;
         }
         return false;
     }
 
     public int hashCodeCircular() {
-        int result = 17; 
+        int result = 17;
         result = 31 * result + Arrays.hashCode(getDestinatarios());
-        result = 31 * result + hashCodeNorma();
+        result = 31 * result + hashCodeDeliberacao();
         return result;
     }
 }

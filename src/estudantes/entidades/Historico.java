@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import java.util.Arrays;
@@ -8,9 +10,9 @@ public class Historico extends Registro {
     private double coeficiente;
     private String[] componentes;
 
-    public Historico(double coeficiente, String[] componentes, String estudante, long matricula, long autenticacao,
-            String criador, CodigoCurso codigoCurso,
-            int paginas) {
+    public Historico(String estudante, CodigoCurso codigoCurso, int paginas, long matricula, String criador,
+            long autenticacao, double coeficiente,
+            String[] componentes) {
         super(estudante, matricula, autenticacao, criador, codigoCurso, paginas);
         this.coeficiente = coeficiente;
         this.componentes = componentes;

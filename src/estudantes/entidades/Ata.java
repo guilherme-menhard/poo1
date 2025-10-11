@@ -1,4 +1,6 @@
-//Mariana
+/**
+ * @author Mariana Chuquel
+ */
 package estudantes.entidades;
 
 import java.util.Arrays;
@@ -10,7 +12,7 @@ public class Ata extends Documento {
     private String texto;
     private String[] presentes;
 
-    public Ata(int numero, String texto, String[] presentes, String criador, CodigoCurso codigoCurso, int paginas) {
+    public Ata(String texto, CodigoCurso codigoCurso, int numero, int paginas, String criador, String[] presentes) {
         super(criador, codigoCurso, paginas);
         this.numero = numero;
         this.texto = texto;
@@ -40,7 +42,8 @@ public class Ata extends Documento {
     public void setPresentes(String[] presentes) {
         this.presentes = presentes;
     }
-    //começo de código gerado por IA
+
+    // começo de código gerado por IA
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -60,6 +63,6 @@ public class Ata extends Documento {
         result = 31 * result + Arrays.hashCode(presentes);
         return result;
     }
-    //fim do código gerado por IA
+    // fim do código gerado por IA
 
 }

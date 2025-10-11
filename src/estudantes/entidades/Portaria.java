@@ -7,11 +7,12 @@ import professor.entidades.CodigoCurso;
  */
 
 public class Portaria extends Norma {
-    
+
     private int anoInicio;
 
-    public Portaria(int anoInicio, int numero, boolean valido, String texto, String criador, CodigoCurso codigoCurso, int paginas) {
-        super(numero, valido, texto, criador, codigoCurso, paginas);
+    public Portaria(String texto, CodigoCurso codigoCurso, int anoInicio, int numero, boolean valido, String criador,
+            int paginas) {
+        super(texto, codigoCurso, numero, paginas, valido, criador);
         this.anoInicio = anoInicio;
     }
 
@@ -31,7 +32,7 @@ public class Portaria extends Norma {
     }
 
     public int hashCodePortaria() {
-        int result = 17; 
+        int result = 17;
         result = 31 * result + getAnoInicio();
         result = 31 * result + hashCodeNorma();
         return result;
