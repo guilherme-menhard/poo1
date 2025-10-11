@@ -1,7 +1,7 @@
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
-import java.util.Arrays;
+
 
 /**
  * @author Guilherme Menhard
