@@ -24,17 +24,20 @@ public class Circular extends Deliberacao {
         this.destinatarios = destinatarios;
     }
 
-    public boolean equalsCircular(Circular circular) {
-        if (Arrays.equals(this.getDestinatarios(), circular.getDestinatarios()) && this.equalsDeliberacao(circular)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        return false;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Circular circular = (Circular) obj;
+        return Arrays.equals(destinatarios, circular.destinatarios);
     }
 
-    public int hashCodeCircular() {
+    public int hashCode() {
         int result = 17;
-        result = 31 * result + Arrays.hashCode(getDestinatarios());
-        result = 31 * result + hashCodeDeliberacao();
+        result = 31 * result + Arrays.hashCode(destinatarios);
         return result;
     }
 }
