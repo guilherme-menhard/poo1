@@ -4,7 +4,8 @@ import professor.entidades.CodigoCurso;
 
 /**
  * Classe que representa um documento genérico.
- * <br><br>
+ * <br>
+ * <br>
  * <strong>Seu trabalho começa aqui...</strong>
  * 
  * @author Guilherme Menhard
@@ -20,7 +21,7 @@ public abstract class Documento {
         this.codigoCurso = codigoCurso;
         this.paginas = paginas;
     }
-    
+
     public String getCriador() {
         return criador;
     }
@@ -45,22 +46,21 @@ public abstract class Documento {
         this.paginas = paginas;
     }
 
-/* Início do Código gerado por IA 
- * Primeiro equals() e hashCode(), me baseei nesse modelo da IA para codar os outros.
-*/
-    public boolean equalsDocumento(Documento documento) {
-        if (this.criador.equals(documento.getCriador()) && this.codigoCurso == documento.getCodigoCurso() && this.paginas == documento.getPaginas()) {
+    public boolean equals(Object obj) {
+        if (obj == this) {
             return true;
         }
-        return false;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Documento doc = (Documento) obj;
+        return criador.equals(doc.criador) && paginas == doc.paginas;
+
     }
 
     public int hashCodeDocumento() {
-        int hash = 17;
-        hash = 31 * hash + (this.criador != null ? this.criador.hashCode() : 0);
-        hash = 31 * hash + (this.codigoCurso != null ? this.codigoCurso.hashCode() : 0);
-        hash = 31 * hash + this.paginas;
-        return hash;
+        int result = Integer.hashCode(paginas);
+        result = 31 * result + (criador != null ? criador.hashCode() : 0);
+        return result;
     }
-/* Fim do Código gerado por IA */
 }
