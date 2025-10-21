@@ -6,15 +6,14 @@ import professor.entidades.CodigoCurso;
  * @author Guilherme Menhard
  */
 
-
 public class Deliberacao extends DocumentoAdministrativo {
-    
+
     private String texto;
 
     public Deliberacao(String texto, String criador, CodigoCurso codigoCurso, int paginas) {
         super(criador, codigoCurso, paginas);
     }
-    
+
     public String getTexto() {
         return texto;
     }
@@ -23,17 +22,21 @@ public class Deliberacao extends DocumentoAdministrativo {
         this.texto = texto;
     }
 
-    public boolean equalsDeliberacao(Deliberacao deliberacao) {
-        if (this.getTexto().equals(deliberacao.getTexto()) && this.equalsDocumentoAdministrativo(deliberacao)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        return false;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Deliberacao deliberacao = (Deliberacao) obj;
+        return texto.equals(deliberacao.texto);
+
     }
 
-    public int hashCodeDeliberacao() {
-        int result = 17; 
-        result = 31 * result + (getTexto() != null ? getTexto().hashCode() : 0);
-        result = 31 * result + hashCodeDocumentoAdministrativo();
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (texto != null ? texto.hashCode() : 0);
         return result;
     }
 
