@@ -22,6 +22,7 @@ public class Deliberacao extends DocumentoAdministrativo {
         this.texto = texto;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -34,6 +35,7 @@ public class Deliberacao extends DocumentoAdministrativo {
 
     }
 
+    @Override
     public int hashCode() {
         int result = 17;
         result = 31 * result + (texto != null ? texto.hashCode() : 0);

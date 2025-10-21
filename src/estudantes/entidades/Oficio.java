@@ -2,7 +2,6 @@ package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
 
-
 /**
  * @author Guilherme Menhard
  */
@@ -24,17 +23,20 @@ public class Oficio extends Deliberacao {
         this.destinatario = destinatario;
     }
 
-    public boolean equalsOficio(Oficio oficio) {
-        if (this.destinatario.equals(oficio.getDestinatario()) && this.equalsDeliberacao(oficio)) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        }
-        return false;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Oficio ofc = (Oficio) obj;
+        return destinatario.equals(ofc.destinatario);
     }
 
-    public int hashCodeOficio() {
+    @Override
+    public int hashCode() {
         int result = 17;
-        result = 31 * result + (getDestinatario() != null ? getDestinatario().hashCode() : 0);
-        result = 31 * result + hashCodeDeliberacao();
+        result = 31 * result + (destinatario != null ? destinatario.hashCode() : 0);
         return result;
     }
 }

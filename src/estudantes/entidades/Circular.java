@@ -23,7 +23,7 @@ public class Circular extends Deliberacao {
     public void setDestinatarios(String[] destinatarios) {
         this.destinatarios = destinatarios;
     }
-
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -34,7 +34,7 @@ public class Circular extends Deliberacao {
         Circular circular = (Circular) obj;
         return Arrays.equals(destinatarios, circular.destinatarios);
     }
-
+    @Override
     public int hashCode() {
         int result = 17;
         result = 31 * result + Arrays.hashCode(destinatarios);

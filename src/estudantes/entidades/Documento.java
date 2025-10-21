@@ -46,6 +46,7 @@ public abstract class Documento {
         this.paginas = paginas;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -54,13 +55,15 @@ public abstract class Documento {
             return false;
         }
         Documento doc = (Documento) obj;
-        return criador.equals(doc.criador) && paginas == doc.paginas;
+        return criador.equals(doc.criador) && paginas == doc.paginas && codigoCurso == doc.codigoCurso;
 
     }
 
-    public int hashCodeDocumento() {
+    @Override
+    public int hashCode() {
         int result = Integer.hashCode(paginas);
         result = 31 * result + (criador != null ? criador.hashCode() : 0);
+        result = 31 * result + (codigoCurso != null ? codigoCurso.hashCode() : 0);
         return result;
     }
 }

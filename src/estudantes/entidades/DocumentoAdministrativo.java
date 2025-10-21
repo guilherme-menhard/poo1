@@ -11,20 +11,25 @@ public class DocumentoAdministrativo extends Documento {
     public DocumentoAdministrativo(String criador, CodigoCurso codigoCurso, int paginas) {
         super(criador, codigoCurso, paginas);
     }
-    
-    public boolean equalsDocumentoAdministrativo(DocumentoAdministrativo documentoAdministrativo) {
-        if (this.getCriador().equals(documentoAdministrativo.getCriador()) && this.getCodigoCurso() == documentoAdministrativo.getCodigoCurso() && this.getPaginas() == documentoAdministrativo.getPaginas()) {
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
             return true;
         }
-        return false;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+    // Começo de código gerado por IA
+        return super.equals(obj);
+
     }
 
-    public int hashCodeDocumentoAdministrativo() {
-        int result = 17; //Copilot indicou que 17 é um bom número primo inicial.
-        result = 31 * result + (getCriador() != null ? getCriador().hashCode() : 0);
-        result = 31 * result + (getCodigoCurso() != null ? getCodigoCurso().hashCode() : 0);
-        result = 31 * result + getPaginas();
-        return result;
+    @Override
+    public int hashCode() {
+
+        return super.hashCode();
     }
-    
+    // Fim de código gerado por IA
+
 }

@@ -24,17 +24,19 @@ public class Portaria extends Norma {
         this.anoInicio = anoInicio;
     }
 
-    public boolean equalsPortaria(Portaria portaria) {
-        if (this.getAnoInicio() == portaria.getAnoInicio() && this.equalsNorma(portaria)) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        }
-        return false;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Portaria porta = (Portaria) obj;
+        return anoInicio == porta.anoInicio;
     }
 
-    public int hashCodePortaria() {
-        int result = 17;
-        result = 31 * result + getAnoInicio();
-        result = 31 * result + hashCodeNorma();
+    @Override
+    public int hashCode() {
+        int result = Integer.hashCode(anoInicio);
         return result;
     }
 }

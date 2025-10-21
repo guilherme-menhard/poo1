@@ -26,7 +26,7 @@ public class Norma extends DocumentoAdministrativo {
         return valido;
     }
 
-    public String getTexto() {
+    public String geTexto() {
         return texto;
     }
 
@@ -42,20 +42,21 @@ public class Norma extends DocumentoAdministrativo {
         this.texto = texto;
     }
 
-    public boolean equalsNorma(Norma norma) {
-        if (this.getNumero() == norma.getNumero() && this.getValido() == norma.getValido()
-                && this.getTexto().equals(norma.getTexto()) && this.equalsDocumentoAdministrativo(norma)) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        }
-        return false;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Norma norma = (Norma) obj;
+        return numero == norma.numero && texto.equals(norma.texto) && valido == norma.valido;
     }
 
-    public int hashCodeNorma() {
-        int result = 17;
-        result = 31 * result + getNumero();
-        result = 31 * result + (getValido() ? 1 : 0);
-        result = 31 * result + (getTexto() != null ? getTexto().hashCode() : 0);
-        result = 31 * result + hashCodeDocumentoAdministrativo();
+    @Override
+    public int hashCode() {
+        int result = Integer.hashCode(numero);
+        result = 31 * result + (valido ? 1 : 0);
+        result = 31 * result + (texto != null ? texto.hashCode() : 0);
         return result;
     }
 }
