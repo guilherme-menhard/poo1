@@ -82,32 +82,25 @@ public class Burocrata {
      *      professor.entidades.CodigoCurso)
      */
     public void trabalhar() {
-       
-
         for (CodigoCurso curso : CodigoCurso.values()) {
             Documento[] documentos = universidade.pegarCopiaDoMonteDoCurso(curso);
-
-            Documento docs = documentos[0];
-
             if (documentos.length == 0)
                 continue;
-
-            for (int i = 0; i < 4; i++) {
+        
+            int limit = Math.min(documentos.length, 5); // trocar 5 por tamanho real da mesa/processos
+            for (int i = 0; i < limit; i++) {
+                Documento docs = documentos[i];
                 Processo processo = mesa.getProcesso(i);
-
                 if (processo == null)
                     continue;
-
-                universidade.removerDocumentoDoMonteDoCurso(docs, curso);
-
-                processo.adicionarDocumento(docs);
-
-                universidade.despachar(processo);
             
+                // só adiciona se a remoção da estrutura real tiver sucesso
+                if (!universidade.removerDocumentoDoMonteDoCurso(docs, curso))
+                    continue;
+            
+                processo.adicionarDocumento(docs);
+                universidade.despachar(processo);
             }
-        
-          
         }
-
     }
 }
